@@ -3,7 +3,7 @@ import _root_.org.scalablytyped.converter.plugin.ScalablyTypedConverterGenSource
 
 organization := "com.github.lolgab"
 
-scalaVersion := "3.1.0"
+scalaVersion := Versions.scala
 
 enablePlugins(ScalablyTypedConverterGenSourcePlugin)
 Compile / npmDependencies ++= Seq(
@@ -16,6 +16,12 @@ version := {
 }
 
 stOutputPackage := "agribiogabriele.typings"
+
+// stImport := {
+//   val result = stImport.value
+//   Seq("./amm", "modify-sources.sc").!!
+//   result
+// }
 
 Compile / doc / sources := Seq()
 

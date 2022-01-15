@@ -1,4 +1,6 @@
-val files = os.walk(os.pwd / "target" / "scala-3.0.1" / "src_managed")
+import $file.project.versions
+
+val files = os.walk(os.pwd / "target" / s"scala-${versions.Versions.scala}" / "src_managed")
   .filter(_.ext == "scala")
 
 def modifyLine(line: String): String = {
