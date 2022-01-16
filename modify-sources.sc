@@ -4,9 +4,7 @@ val files = os.walk(os.pwd / "target" / s"scala-${versions.Versions.scala}" / "s
   .filter(_.ext == "scala")
 
 def modifyLine(line: String): String = {
-  line
-    .replaceAll("""@JSImport\("([^"]+)", "([^"]+)"\)""", """@JSImport("$1", "$2", "$1.$2")""")
-    .replaceAll("""@JSImport\("([^"]+)", (JSImport[^,]+)\)""", """@JSImport("$1", $2, "$1")""")
+  line.replaceAll("app/dist/", "")
 }
 
 val modified = files.map(f =>

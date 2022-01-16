@@ -12,16 +12,16 @@ Compile / npmDependencies ++= Seq(
 )
 
 version := {
-  (Compile / npmDependencies).value.map{ case (name, version) => s"${name}_${version}" }.mkString("_")
+  (Compile / npmDependencies).value.map{ case (name, version) => s"${name}_${version}" }.mkString("_") + "_1"
 }
 
 stOutputPackage := "agribiogabriele.typings"
 
-// stImport := {
-//   val result = stImport.value
-//   Seq("./amm", "modify-sources.sc").!!
-//   result
-// }
+stImport := {
+  val result = stImport.value
+  Seq("./amm", "modify-sources.sc").!!
+  result
+}
 
 Compile / doc / sources := Seq()
 
