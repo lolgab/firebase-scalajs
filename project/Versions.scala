@@ -1,3 +1,3 @@
 object Versions {
-  val scala = "3.1.0"
+  val scala = "3.1.2"
 }

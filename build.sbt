@@ -7,12 +7,12 @@ scalaVersion := Versions.scala
 
 enablePlugins(ScalablyTypedConverterGenSourcePlugin)
 Compile / npmDependencies ++= Seq(
-  "firebase" -> "9.6.3",
-  "firebaseui" -> "6.0.0"
+  "firebase" -> "9.8.4",
+  "firebaseui" -> "6.0.1"
 )
 
 version := {
-  (Compile / npmDependencies).value.map{ case (name, version) => s"${name}_${version}" }.mkString("_") + "_1"
+  (Compile / npmDependencies).value.map{ case (name, version) => s"${name}_${version}" }.mkString("_")
 }
 
 stOutputPackage := "agribiogabriele.typings"
